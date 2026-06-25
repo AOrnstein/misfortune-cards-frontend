@@ -1,31 +1,7 @@
-import "../styles/pages/Compendium.css";
+import { Link } from "react-router";
 
-const cards = [
-  {
-    id: "sun",
-    name: "The Sun",
-    type: "Treasure",
-    image: "☀",
-  },
-  {
-    id: "jester",
-    name: "The Jester",
-    type: "Trap",
-    image: "☽",
-  },
-  {
-    id: "moon",
-    name: "The Moon",
-    type: "Other",
-    image: "◐",
-  },
-  {
-    id: "rogue",
-    name: "The Rogue",
-    type: "Creature",
-    image: "✦",
-  },
-];
+import { cards } from "../data/cards";
+import "../styles/pages/Compendium.css";
 
 export default function Compendium() {
   return (
@@ -51,13 +27,13 @@ export default function Compendium() {
 
       <div className="card-grid">
         {cards.map((card) => (
-          <article className="card-tile" key={card.id}>
+          <Link className="card-tile" key={card.id} to={`/cards/${card.id}`}>
             <div className="card-art">{card.image}</div>
             <div className="card-info">
               <h2>{card.name}</h2>
               <p>{card.type}</p>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </section>

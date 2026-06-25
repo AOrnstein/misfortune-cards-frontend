@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 
-import { useAuth } from "./AuthContext";
+import { useAuth } from "./useAuth";
 
 export default function Login() {
   const { login } = useAuth();
@@ -45,7 +45,7 @@ export default function Login() {
       </form>
 
       <p className="muted">
-        Don't have an account? <Link to="/register">Register</Link>
+        Don&apos;t have an account? <Link to="/register">Register</Link>
       </p>
     </section>
   );
