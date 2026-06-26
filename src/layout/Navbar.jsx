@@ -4,6 +4,7 @@ import { useAuth } from "../auth/useAuth";
 
 export default function Navbar() {
   const { token, logout } = useAuth();
+
   return (
     <nav id="navbar">
       <NavLink to="/">Home</NavLink>
@@ -16,5 +17,6 @@ export default function Navbar() {
       ) : (
         <NavLink to="/login">Login</NavLink>
       )}
-    </nav>  );
+    </nav>
+  );
 }

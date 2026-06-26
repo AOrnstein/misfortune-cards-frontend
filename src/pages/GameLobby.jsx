@@ -1,20 +1,25 @@
-import { Link } from "react-router";
+import { games } from "../data/games";
+import PageHeader from "../components/PageHeader";
 
 export default function GameLobby() {
   return (
     <section className="compendium-page">
-      <div className="page-header">
-        <h1>Game Lobby</h1>
-        <p className="muted">Start a table or join as a player.</p>
-      </div>
+      <PageHeader
+        title="Game Lobby"
+        description="Start a table or join as a player."
+      />
 
-      <div className="welcome-actions">
-        <Link className="button" to="/game/dm">
-          DM View
-        </Link>
-        <Link className="button secondary" to="/game/player">
-          Player View
-        </Link>
+      <div className="game-list">
+        {games.map((game) => (
+          <article className="detail-panel" key={game.id}>
+            <h2>{game.name}</h2>
+            <p className="muted">DM: {game.dm}</p>
+            <p>
+              {game.players}/{game.maxPlayers} players
+            </p>
+            <p>{game.status}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
