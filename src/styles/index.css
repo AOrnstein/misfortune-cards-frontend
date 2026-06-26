@@ -28,6 +28,7 @@ main {
   min-height: 100vh;
   margin: 0 auto;
   padding: 1rem;
+  padding-bottom: 5rem;
 }
 
 h1,
@@ -84,11 +85,20 @@ label {
 }
 
 #navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  border-bottom: 0.0625rem solid var(--border);
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.25rem;
+
+  width: min(100%, 30rem);
+  transform: translateX(-50%);
+  padding: 0.5rem;
+
+  border-top: 0.0625rem solid var(--border);
   background: var(--panel);
 }
 
@@ -110,18 +120,6 @@ label {
     padding: 1rem;
   }
 
-  #navbar {
-    position: sticky;
-    bottom: 0;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.25rem;
-    width: min(100%, 30rem);
-    margin: 0 auto;
-    padding: 0.5rem;
-    border-top: 0.0625rem solid var(--border);
-    background: var(--panel);
-  }
   
   #navbar a,
   #navbar button {
