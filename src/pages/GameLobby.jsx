@@ -1,5 +1,6 @@
 import { games } from "../data/games";
 import PageHeader from "../components/PageHeader";
+import InvitationCard from "../components/InvitationCard";
 
 export default function GameLobby() {
   return (
@@ -8,6 +9,8 @@ export default function GameLobby() {
         title="Game Lobby"
         description="Start a table or join as a player."
       />
+
+      <InvitationCard game={games[0]} />
 
       <div className="game-list">
         {games.map((game) => (
