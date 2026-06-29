@@ -1,0 +1,44 @@
+.card-details-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.back-link {
+  width: fit-content;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.detail-card-art {
+  aspect-ratio: 2 / 3;
+  display: grid;
+  place-items: center;
+  border: 0.0625rem solid var(--gold);
+  border-radius: 0.75rem;
+  background: #090a10;
+  color: var(--gold);
+  font-size: 4rem;
+}
+
+.card-type {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.detail-panel {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--panel);
+}
+
+.detail-panel h2 {
+  font-size: 1rem;
+}
+
+.detail-panel p {
+  color: var(--muted);
+}
