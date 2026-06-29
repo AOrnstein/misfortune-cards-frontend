@@ -2,27 +2,27 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "./AuthContext";
 
-/** A form that allows users to log into an existing account.
- Receives data from auth context file. Handle form added logging in.
- Get username and password from form. Handle login errors.
- */
+/**
+ * Log in form that verifies existing user. 
+*/
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
-
+// Attempts to authenticate user using the submitted credentials. 
   const onLogin = async (formData) => {
     const username = formData.get("username");
     const password = formData.get("password");
     try {
       await login({ username, password });
+// Redirects to home page after a successful login.
       navigate("/");
     } catch (e) {
       setError(e.message);
     }
   };
-/*Return login form and errors to display on screen */
+// Renders the login form and any authentication errors.
   return (
     <>
       <h1>Log in to your account</h1>

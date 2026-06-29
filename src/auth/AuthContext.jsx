@@ -3,15 +3,18 @@ import { createContext, useContext, useEffect, useState } from "react";
 const API = import.meta.env.VITE_API;
 
 const AuthContext = createContext();
-
+/**
+ * Verification state and functions for the entire app.
+ * User JWT is stored and shows log in, register and logout features.
+ */
 export function AuthProvider({ children }) {
-  /*Saves token and keeps user logged in*/
+  // Saves token and keeps user logged in
   const [token, setToken] = useState(sessionStorage.getItem("token"));
 
   useEffect(() => {
     if (token) sessionStorage.setItem("token", token);
   }, [token]);
-/* Username and password entered, then data sent to backend */
+// Register new user and store the returned token.
   const register = async (credentials) => {
     const response = await fetch(API + "/users/register", {
       method: "POST",
@@ -22,8 +25,7 @@ export function AuthProvider({ children }) {
     if (!response.ok) throw Error(result);
     setToken(result);
   };
-/*Backend checks the database, matching password
-returns token*/
+// Existing user logs in and authentication token is stored.
   const login = async (credentials) => {
     const response = await fetch(API + "/users/login", {
       method: "POST",
@@ -34,7 +36,7 @@ returns token*/
     if (!response.ok) throw Error(result);
     setToken(result);
   };
-/*Removes the token and signs user out of account */
+// Removes the token and signs user out of account.
   const logout = () => {
     setToken(null);
     sessionStorage.removeItem("token");
