@@ -14,8 +14,10 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     if (token) sessionStorage.setItem("token", token);
   }, [token]);
-// Register new user and store the returned token.
-  const register = async (credentials) => {
+/** 
+ * Register new user and store the returned token.
+*/
+const register = async (credentials) => {
     const response = await fetch(API + "/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,7 +27,9 @@ export function AuthProvider({ children }) {
     if (!response.ok) throw Error(result);
     setToken(result);
   };
-// Existing user logs in and authentication token is stored.
+/*
+ * Existing user logs in and returned authentication token is stored. 
+*/
   const login = async (credentials) => {
     const response = await fetch(API + "/users/login", {
       method: "POST",
