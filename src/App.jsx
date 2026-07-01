@@ -9,7 +9,6 @@ import Dashboard from "./pages/Dashboard";
 import Compendium from "./pages/Compendium";
 import CardDetails from "./pages/CardDetails";
 import DeckBuilder from "./pages/DeckBuilder";
-import GameLobby from "./pages/GameLobby";
 import PlayerView from "./pages/PlayerView";
 import DmView from "./pages/DmView";
 import Profile from "./pages/Profile";

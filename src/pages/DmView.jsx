@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { cards } from "../data/cards";
-import "../styles/pages/DmView.css";
 
 export default function DmView() {
   const [drawnCard, setDrawnCard] = useState(null);
