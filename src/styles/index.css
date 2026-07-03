@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #05060a;
+  --panel: #11121a;
+  --text: #f8f5e9;
+  --muted: #a7a0b3;
+  --gold: #d4af37;
+  --purple: #6d28d9;
+  --border: #3a3345;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  width: min(100%, 30rem);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 5rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--purple);
+  color: var(--text);
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--text);
+  padding: 0 1rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+#navbar {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  z-index: 10;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.25rem;
+
+  width: min(100%, 30rem);
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+
+  border-top: 0.0625rem solid var(--border);
+  background: rgba(17, 18, 26, 0.96);
+  backdrop-filter: blur(0.75rem);
+  box-shadow: 0 -0.5rem 1.5rem rgba(0, 0, 0, 0.35);
+}
+
+#brand p {
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.page {
+  width: min(100%, 30rem);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#navbar a,
+#navbar button {
+  display: grid;
+  place-items: center;
+
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#navbar a.active {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold);
+}
+
+#navbar a:hover,
+#navbar button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+#navbar button {
+  padding: 0;
+}
+
+.game-list {
+  display: grid;
+  gap: 1rem;
+}
