@@ -1,11 +1,10 @@
 import { useState } from "react";
-
-import { cards } from "../data/cards";
+import { useCards } from "../contexts/useCards";
 
 export default function DmView() {
   const [drawnCard, setDrawnCard] = useState(null);
   const [autoConfirm, setAutoConfirm] = useState(false);
-
+  const { cards } = useCards();
 
   const drawCard = () => {
     const randomCard = cards[Math.floor(Math.random() * cards.length)];
@@ -21,27 +20,27 @@ export default function DmView() {
 
       <div className="game-board">
         <div className="draw-area">
-        <div className="game-card-slot">
-  {drawnCard ? (
-    <article className="card-tile game-card-preview">
-      <div className="card-art">{drawnCard.image}</div>
+          <div className="game-card-slot">
+            {drawnCard ? (
+              <article className="card-tile game-card-preview">
+                <div className="card-art">{drawnCard.image}</div>
 
-      <div className="card-info">
-        <h2>{drawnCard.name}</h2>
-        <p>{drawnCard.type}</p>
-      </div>
-    </article>
-  ) : (
-    <article className="card-tile game-card-preview">
-      <div className="card-art">?</div>
+                <div className="card-info">
+                  <h2>{drawnCard.name}</h2>
+                  <p>{drawnCard.type}</p>
+                </div>
+              </article>
+            ) : (
+              <article className="card-tile game-card-preview">
+                <div className="card-art">?</div>
 
-      <div className="card-info">
-        <h2>No Card</h2>
-        <p>Draw from deck</p>
-      </div>
-    </article>
-  )}
-</div>
+                <div className="card-info">
+                  <h2>No Card</h2>
+                  <p>Draw from deck</p>
+                </div>
+              </article>
+            )}
+          </div>
           <div className="deck-stack">⌁</div>
         </div>
 

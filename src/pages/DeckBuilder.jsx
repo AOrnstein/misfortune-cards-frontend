@@ -1,6 +1,7 @@
-import { cards } from "../data/cards";
+import { useCards } from "../contexts/useCards";
 
 export default function DeckBuilder() {
+  const { cards } = useCards();
   return (
     <section className="compendium-page">
       <div className="page-header">

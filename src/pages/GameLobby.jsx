@@ -2,11 +2,12 @@ import { useMemo } from "react";
 
 import InvitationCard from "../components/InvitationCard";
 import PageHeader from "../components/PageHeader";
-import { cards } from "../data/cards";
+import { useCards } from "../contexts/useCards";
 import { games } from "../data/games";
 
 export default function GameLobby() {
   const featuredGame = games[0];
+  const { cards } = useCards();
 
   const randomizedDeck = useMemo(() => {
     return [...cards].sort(() => Math.random() - 0.5);

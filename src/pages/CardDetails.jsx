@@ -1,10 +1,11 @@
 import { Link, useParams } from "react-router";
 
-import { cards } from "../data/cards";
+import { useCards } from "../contexts/useCards";
 import "../styles/pages/CardDetails.css";
 
 export default function CardDetails() {
   const { cardId } = useParams();
+  const { cards } = useCards();
   const card = cards.find((item) => item.id === cardId);
 
   if (!card) {
