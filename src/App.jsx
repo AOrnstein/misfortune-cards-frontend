@@ -9,10 +9,10 @@ import Dashboard from "./pages/Dashboard";
 import Compendium from "./pages/Compendium";
 import CardDetails from "./pages/CardDetails";
 import DeckBuilder from "./pages/DeckBuilder";
+import Games from "./components/Games";
 import PlayerView from "./pages/PlayerView";
 import DmView from "./pages/DmView";
 import Profile from "./pages/Profile";
-import GameLobby from "./pages/GameLobby";
 
 export default function App() {
   return (
@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/compendium" element={<Compendium />} />
         <Route path="/cards/:cardId" element={<CardDetails />} />
         <Route path="/deck-builder" element={<DeckBuilder />} />
-        <Route path="/lobby" element={<GameLobby />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/game/player" element={<PlayerView />} />
         <Route path="/game/dm" element={<DmView />} />
         <Route path="/profile" element={<Profile />} />
