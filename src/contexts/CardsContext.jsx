@@ -3,7 +3,7 @@ import { getCards } from "../api/cards";
 import cardImgUrl from "../utils/cardImgUrl";
 import { CardsContext } from "./cards-context";
 
-// Fallback category has a local  default card back url
+// Fallback category has a local default card back url
 const FALLBACK_CATEGORY = { card_back_url: "/src/data/cardback.webp" };
 
 export function CardsProvider({ children }) {
