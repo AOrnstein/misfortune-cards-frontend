@@ -1,17 +1,17 @@
 import { Link } from "react-router";
+import { useCards } from "../contexts/useCards";
 
 import "../styles/pages/Welcome.css";
 
 export default function Welcome() {
+  const { cardsCategory } = useCards();
   return (
     <section className="welcome-page">
       <div className="welcome-card">
         <p className="welcome-mark">✦</p>
 
         <div className="welcome-art">
-          <div className="card-back">
-            <span>☉</span>
-          </div>
+          <img className="card-back" src={cardsCategory.card_back_url} />
         </div>
 
         <div className="welcome-copy">
