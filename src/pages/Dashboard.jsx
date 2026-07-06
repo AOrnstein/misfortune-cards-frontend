@@ -1,8 +1,9 @@
 import { Link } from "react-router";
 
-import { cards } from "../data/cards";
+import { useCards } from "../contexts/useCards";
 
 export default function Dashboard() {
+  const { cards } = useCards();
   return (
     <section className="compendium-page">
       <div className="page-header">
