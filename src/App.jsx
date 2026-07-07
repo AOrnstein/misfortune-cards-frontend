@@ -14,7 +14,6 @@ import GameDetails from "./components/games/GameDetails";
 import PlayerView from "./pages/PlayerView";
 import DmView from "./pages/DmView";
 import Profile from "./pages/Profile";
-import GameLobby from "./pages/GameLobby";
 
 export default function App() {
   return (
