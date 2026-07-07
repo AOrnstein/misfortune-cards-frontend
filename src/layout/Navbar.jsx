@@ -10,7 +10,7 @@ export default function Navbar() {
       <NavLink to="/">Home</NavLink>
       <NavLink to="/compendium">Cards</NavLink>
       <NavLink to="/deck-builder">Decks</NavLink>
-      <NavLink to="/lobby">Games</NavLink>
+      {token && <NavLink to="/games">Games</NavLink>}
 
       {token ? (
         <button onClick={logout}>Logout</button>
