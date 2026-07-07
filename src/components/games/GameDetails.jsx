@@ -84,7 +84,7 @@ export default function GameDetails() {
         <p>Created: {new Date(game.created_at).toLocaleString()}</p>
         <p>DM: {game.dm}</p>
         <PlayerList
-          players={game.players}
+          players={game.players.filter((p) => !p.is_dm)}
           isDm={game.is_dm}
           tryDismissPlayer={tryDismissPlayer}
         />
