@@ -15,7 +15,7 @@ function GameListItem({ game }) {
   return (
     <li>
       <Link to={"/games/" + game.id}>{game.name}</Link>
-      //Icon: if DM, add DM icon
+      {/* TODO: if DM, add DM icon */}
     </li>
   );
 }

@@ -9,7 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import Compendium from "./pages/Compendium";
 import CardDetails from "./pages/CardDetails";
 import DeckBuilder from "./pages/DeckBuilder";
-import GamesPage from "./components/games/GamesPage";
+import Games from "./pages/Games";
+import GameDetails from "./components/games/GameDetails";
 import PlayerView from "./pages/PlayerView";
 import DmView from "./pages/DmView";
 import Profile from "./pages/Profile";
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/cards/:cardId" element={<CardDetails />} />
         <Route path="/deck-builder" element={<DeckBuilder />} />
         <Route path="/games" element={<Games />} />
+        <Route path="/games/:id" element={<GameDetails />} />
         <Route path="/game/player" element={<PlayerView />} />
         <Route path="/game/dm" element={<DmView />} />
         <Route path="/profile" element={<Profile />} />
