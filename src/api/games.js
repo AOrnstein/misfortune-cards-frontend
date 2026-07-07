@@ -14,66 +14,70 @@ export async function getGames(token) {
 }
 
 export async function getGame(token, id) {
-  try {
-    const response = await fetch(API + "/games/" + id, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+  const response = await fetch(API + "/games/" + id, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!response.ok) {
     const result = await response.json();
-    return result;
-  } catch (e) {
-    console.error(e);
-    return null;
+    throw Error(result.message);
   }
+
+  const result = await response.json();
+  return result;
 }
 
 export async function createGame(token, name) {
-  try {
-    const response = await fetch(API + "/games", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ name }),
-    });
+  const response = await fetch(API + "/games", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name }),
+  });
+
+  if (!response.ok) {
     const result = await response.json();
-    return result;
-  } catch (e) {
-    console.error(e);
-    return null;
+    throw Error(result.message);
   }
+
+  const result = await response.json();
+  return result;
 }
 
 export async function joinGame(token, inviteCode) {
-  try {
-    const response = await fetch(API + "/games/join", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ inviteCode }),
-    });
+  const response = await fetch(API + "/games/join", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ inviteCode }),
+  });
+
+  if (!response.ok) {
     const result = await response.json();
-    return result;
-  } catch (e) {
-    console.error(e);
-    return null;
+    throw Error(result.message);
   }
+
+  const result = await response.json();
+  return result;
 }
 
 export async function regenerateCode(token, id) {
-  try {
-    const response = await fetch(API + "/games/" + id + "/invite-code", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+  const response = await fetch(API + "/games/" + id + "/invite-code", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+
+  if (!response.ok) {
     const result = await response.json();
-    return result;
-  } catch (e) {
-    console.error(e);
-    return null;
+    throw Error(result.message);
   }
+
+  const result = await response.json();
+  return result;
 }
 
 export async function dismissPlayer(token, gameId, playerId) {
