@@ -69,39 +69,47 @@ export default function GameDetails() {
   if (!game) return <p>Loading...</p>;
 
   return (
-    <article id="game-details">
+    <section id="game-details">
       <h1>{game.name}</h1>
+      <p>Created: {new Date(game.created_at).toLocaleString()}</p>
       <h2>{game.invite_code}</h2>
-      <button onClick={() => navigator.clipboard.writeText(game.invite_code)}>
-        Copy Invite Code
-      </button>
-      {game.is_dm && (
-        <button onClick={() => tryRegenerateCode(game.id)}>
-          Regenerate Invite Code
+      <div className="invite-actions">
+        <button onClick={() => navigator.clipboard.writeText(game.invite_code)}>
+          Copy Invite Code
         </button>
-      )}
-      <section>
-        <p>Created: {new Date(game.created_at).toLocaleString()}</p>
-        <p>DM: {game.dm}</p>
+        {game.is_dm && (
+          <button onClick={() => tryRegenerateCode(game.id)}>
+            Regenerate Invite Code
+          </button>
+        )}
+      </div>
+      <div className="game-personnel">
+        <h3>Dungeon Master</h3>
+        <p>{game.dm}</p>
+        <h3>Players</h3>
         <PlayerList
           players={game.players.filter((p) => !p.is_dm)}
           isDm={game.is_dm}
           tryDismissPlayer={tryDismissPlayer}
         />
-      </section>
-      <Link to={"/games/" + game.id + "/table"} className="btn">
-        Join Table
-      </Link>
-      <Link to={"/games/" + game.id + "/deck"} className="btn">
-        Game Deck
-      </Link>
-      {game.is_dm ? (
-        <button onClick={() => tryDeleteGame(game.id)}>Delete Game</button>
-      ) : (
-        <button onClick={tryQuitGame}>Quit Game</button>
-      )}
-      {error && <p role="alert">{error}</p>}
-    </article>
+      </div>
+      <div className="game-links">
+        <Link to={"/games/" + game.id + "/table"} className="btn">
+          Join Table
+        </Link>
+        <Link to={"/games/" + game.id + "/deck"} className="btn">
+          Game Deck
+        </Link>
+      </div>
+      <div className="game-actions">
+        {game.is_dm ? (
+          <button onClick={() => tryDeleteGame(game.id)}>Delete Game</button>
+        ) : (
+          <button onClick={tryQuitGame}>Quit Game</button>
+        )}
+        {error && <p role="alert">{error}</p>}
+      </div>
+    </section>
   );
 }
 
