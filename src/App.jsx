@@ -14,6 +14,7 @@ import GameDetails from "./components/games/GameDetails";
 import PlayerView from "./pages/PlayerView";
 import DmView from "./pages/DmView";
 import Profile from "./pages/Profile";
+import GameTable from "./pages/GameTable";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/deck-builder" element={<DeckBuilder />} />
         <Route path="/games" element={<Games />} />
         <Route path="/games/:id" element={<GameDetails />} />
+        <Route path="/games/:id/table" element={<GameTable />} />
         <Route path="/game/player" element={<PlayerView />} />
         <Route path="/game/dm" element={<DmView />} />
         <Route path="/profile" element={<Profile />} />
