@@ -48,6 +48,10 @@
   flex-grow: 1;
 }
 
+.card-tile > button.card-tile {
+  border: 0;
+}
+
 .game-card-slot {
   display: flex;
   justify-content: center;
