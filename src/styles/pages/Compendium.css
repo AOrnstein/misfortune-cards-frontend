@@ -38,6 +38,11 @@
   gap: 0.75rem;
 }
 
+.game-board {
+  display: grid;
+  gap: 0.75rem;
+}
+
 .card-tile {
   overflow: hidden;
   border: 0.0625rem solid var(--gold);
@@ -117,6 +122,7 @@
   width: 90%;
   max-height: 90%;
   color: var(--purple);
+  margin: auto;
 }
 
 .card-popover h2 {

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../auth/useAuth";
 import { getGames, createGame, joinGame } from "../api/games";
 
+import "../styles/pages/Games.css";
 import GamesList from "../components/games/GamesList";
 
 export default function GamesPage() {
